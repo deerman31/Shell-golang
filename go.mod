@@ -1,6 +1,6 @@
 module github.com/deerman31/Shell-golang
 
-go 1.21.3
+go 1.23
 
 require github.com/chzyer/readline v1.5.1
 
