@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/chzyer/readline"
 )
@@ -14,10 +15,15 @@ func main() {
 		os.Exit(1)
 	}
 	defer rl.Close()
+	//envp := os.Environ()
 	for {
 		line, err := rl.Readline()
 		if err != nil {
 			break
+		}
+		line = strings.TrimSpace(line)
+		if line == "" {
+			continue
 		}
 		if line == "exit" {
 			os.Exit(0)
